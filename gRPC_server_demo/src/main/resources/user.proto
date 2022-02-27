@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_package = "com.demo.grpc";
+
+service user{
+  rpc login(LoginReq) returns (APIRes);
+  rpc logout(Empty) returns (APIRes);
+}
+
+message LoginReq{
+  string username = 1;
+  string password = 2;
+}
+
+message APIRes{
+  string message = 1;
+  int32 resCode = 2;
+}
+
+message Empty{
+}
